@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💙 Retrospectiva Alanys & João</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="hearts">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+            </div>
+            <h1>💙 Nossa Retrospectiva</h1>
+            <p class="subtitle">Desde 19/08 até 12/11/2024 - O início da nossa história</p>
+            <div class="couple">
+                <span class="name">Alany</span>
+                <span class="amp">&</span>
+                <span class="name">João</span>
+            </div>
+            <div class="period">19 ago 2024 → 12 nov 2024</div>
+        </header>
+
+        <!-- Continuei forte -->
+        <section class="retro-column continued">
+            <div class="column-header">
+                <div class="icon">✅</div>
+                <h2>Continuei Forte</h2>
+                <p>O que funcionou incrível!</p>
+            </div>
+            <div class="notes-container" id="continued">
+                <div class="note pre-filled">
+                    <div>🧤 Alany joga handebol INCRÍVEL como goleirona! Defendendo tudo! 🔥</div>
+                    <small>12/11/2024</small>
+                </div>
+                <div class="note pre-filled">
+                    <div>😍 O sorriso lindo da Alany ilumina meu dia inteiro ✨</div>
+                    <small>12/11/2024</small>
+                </div>
+                <div class="note pre-filled">
+                    <div>💛 O cabelo loiro lindo da Alany é simplesmente perfeito</div>
+                    <small>12/11/2024</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tentei, mas... -->
+        <section class="retro-column tried">
+            <div class="column-header">
+                <div class="icon">⚠️</div>
+                <h2>Tentei, mas...</h2>
+                <p>Que podemos melhorar</p>
+            </div>
+            <div class="notes-container" id="tried">
+                <div class="note-placeholder">
+                    <i class="fas fa-plus"></i>
+                    <span>Adicione aqui...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mudanças -->
+        <section class="retro-column changes">
+            <div class="column-header">
+                <div class="icon">🎯</div>
+                <h2>Mudanças</h2>
+                <p>Vamos fazer diferente</p>
+            </div>
+            <div class="notes-container" id="changes">
+                <div class="note-placeholder">
+                    <i class="fas fa-plus"></i>
+                    <span>Adicione aqui...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Surpresas -->
+        <section class="retro-column surprises">
+            <div class="column-header">
+                <div class="icon">✨</div>
+                <h2>Surpresas</h2>
+                <p>O que nos surpreendeu</p>
+            </div>
+            <div class="notes-container" id="surprises">
+                <div class="note pre-filled">
+                    <div>👶 Alany cuida de crianças com tanto carinho, ela AMA crianças! ❤️</div>
+                    <small>12/11/2024</small>
+                </div>
+                <div class="note pre-filled">
+                    <div>🌸 O cheiro maravilhoso da Alany me deixa apaixonado toda vez! 😍</div>
+                    <small>12/11/2024</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div class="modal" id="noteModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Adicionar Reflexão</h3>
+                    <button class="close-modal" id="closeModal"><i class="fas fa-times"></i></button>
+                </div>
+                <textarea id="noteText" placeholder="O que você quer lembrar sobre nós? 💙..."></textarea>
+                <div class="modal-actions">
+                    <button class="btn-secondary" id="cancelNote">Cancelar</button>
+                    <button class="btn-primary" id="saveNote">Salvar <i class="fas fa-heart"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <footer class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalNotes">5</span>
+                <span>momentos especiais</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number positive" id="positiveNotes">5</span>
+                <span>coisas incríveis</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

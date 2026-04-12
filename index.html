@@ -1,9 +1,491 @@
-# 💙 **SITE COMPLETO ALANYs& JOÃO - 1 ARQUIVO HTML**
-
-**Copie TUDO abaixo → Salve como `index.html` → Abra no navegador → PRONTO!**
-
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐼 Alice Panda Love 🐼</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #a8e6cf 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Elementos Alice no País das Maravilhas */
+        .wonderland-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .clock, .rose, .key, .teapot {
+            position: absolute;
+            font-size: 30px;
+            animation: wonderlandFloat 15s infinite linear;
+        }
+
+        .clock { content: '🕰️'; }
+        .rose { content: '🌹'; }
+        .key { content: '🔑'; }
+        .teapot { content: '🫖'; }
+
+        @keyframes wonderlandFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff69b4;
+            animation: float 6s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .star {
+            position: absolute;
+            color: #ffd700;
+            font-size: 16px;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        .container {
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .counter {
+            background: rgba(255,255,255,0.95);
+            padding: 15px 25px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #ff1493;
+            border: 3px solid #ffd700;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(255,215,0,0.3); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255,215,0,0.6); }
+            100% { transform: scale(1); }
+        }
+
+        .panda-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .panda {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 30px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+        }
+
+        .panda:hover {
+            transform: scale(1.08) rotate(2deg);
+        }
+
+        .panda:active {
+            transform: scale(1.15) rotate(-2deg);
+        }
+
+        .panda-head {
+            width: 210px;
+            height: 210px;
+            background: linear-gradient(145deg, #fff 0%, #f8f8f8 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 45px;
+            left: 45px;
+            border: 8px solid #000;
+            z-index: 3;
+        }
+
+        .panda-ear-left, .panda-ear-right {
+            width: 55px;
+            height: 65px;
+            background: #000;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            top: 25px;
+        }
+
+        .panda-ear-left {
+            left: 25px;
+            transform: rotate(-10deg);
+        }
+
+        .panda-ear-right {
+            right: 25px;
+            transform: rotate(10deg);
+        }
+
+        /* OLHOS AZUIS ✨ */
+        .panda-eye-left, .panda-eye-right {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(145deg, #4a90e2 0%, #357abd 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 85px;
+            border: 5px solid #fff;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .panda-eye-left { left: 65px; }
+        .panda-eye-right { right: 65px; }
+
+        .panda-eye-shine {
+            width: 14px;
+            height: 14px;
+            background: linear-gradient(45deg, #fff, #e0f7ff);
+            border-radius: 50%;
+            position: absolute;
+            top: 6px;
+            left: 8px;
+            box-shadow: 0 0 8px rgba(255,255,255,0.8);
+            animation: blink 3s infinite;
+        }
+
+        @keyframes blink {
+            0%, 85%, 95%, 100% { transform: scaleY(1); }
+            90% { transform: scaleY(0.1); }
+        }
+
+        .panda-nose {
+            width: 22px;
+            height: 16px;
+            background: #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 135px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+        }
+
+        .panda-mouth {
+            width: 32px;
+            height: 22px;
+            border: 3px solid transparent;
+            border-top-color: #000;
+            border-radius: 0 0 50px 50px;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: smile 2s infinite;
+        }
+
+        @keyframes smile {
+            0%, 100% { transform: translateX(-50%) scaleX(1); }
+            50% { transform: translateX(-50%) scaleX(1.1); }
+        }
+
+        .panda-body {
+            width: 170px;
+            height: 130px;
+            background: linear-gradient(145deg, #fff 0%, #f8f8f8 100%);
+            border-radius: 100px 100px 60px 60px;
+            position: absolute;
+            top: 215px;
+            left: 65px;
+            border: 6px solid #000;
+            z-index: 2;
+        }
+
+        .panda-arm-left, .panda-arm-right {
+            width: 38px;
+            height: 75px;
+            background: linear-gradient(145deg, #fff 0%, #f8f8f8 100%);
+            border-radius: 30px;
+            border: 5px solid #000;
+            position: absolute;
+            top: 220px;
+        }
+
+        .panda-arm-left {
+            left: 25px;
+            transform: rotate(-25deg);
+        }
+
+        .panda-arm-right {
+            right: 25px;
+            transform: rotate(25deg);
+        }
+
+        /* Handebol 🏐 */
+        .handball {
+            position: absolute;
+            font-size: 28px;
+            top: 280px;
+            right: 20px;
+            animation: bounceBall 2s infinite;
+            z-index: 5;
+        }
+
+        @keyframes bounceBall {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hearts-explosion {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .heart-explosion {
+            font-size: 26px;
+            position: absolute;
+            animation: explode 1.2s ease-out forwards;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(0) rotate(0deg); opacity: 1; }
+            100% { transform: scale(2.5) rotate(720deg) translate(var(--dx), var(--dy)); opacity: 0; }
+        }
+
+        h1 {
+            font-size: 2.8em;
+            background: linear-gradient(45deg, #ff69b4, #ffd700, #4a90e2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            animation: rainbow 3s infinite;
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .message {
+            background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(248,248,248,0.9));
+            padding: 25px;
+            border-radius: 25px;
+            margin: 25px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            font-size: 1.3em;
+            color: #333;
+            line-height: 1.4;
+            border: 3px solid #ffd700;
+            animation: fadeInUp 1s ease;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .click-hint {
+            color: #ff1493;
+            font-size: 1.2em;
+            margin-top: 15px;
+            animation: wiggle 1.5s infinite;
+            font-weight: bold;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
+        }
+
+        @media (max-width: 480px) {
+            .panda { width: 260px; height: 260px; }
+            h1 { font-size: 2.2em; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos Alice no País das Maravilhas -->
+    <div class="wonderland-bg" id="wonderland"></div>
+    
+    <!-- Estrelas brilhantes -->
+    <div class="stars" id="stars"></div>
+    
+    <!-- Corações flutuantes -->
+    <div class="hearts" id="heartsContainer"></div>
+    
+    <div class="container">
+        <div class="counter" id="counter">
+            💕 Cliques: <span id="clickCount">0</span> 💕
+        </div>
+        
+        <h1>🐼 Alice Panda 🏐</h1>
+        
+        <div class="panda-container">
+            <div class="panda" id="panda">
+                <!-- Orelhas -->
+                <div class="panda-ear-left"></div>
+                <div class="panda-ear-right"></div>
+                
+                <!-- Cabeça -->
+                <div class="panda-head">
+                    <!-- Olhos AZUIS -->
+                    <div class="panda-eye-left">
+                        <div class="panda-eye-shine"></div>
+                    </div>
+                    <div class="panda-eye-right">
+                        <div class="panda-eye-shine"></div>
+                    </div>
+                    <!-- Nariz -->
+                    <div class="panda-nose"></div>
+                    <!-- Boca -->
+                    <div class="panda-mouth"></div>
+                </div>
+                
+                <!-- Corpo -->
+                <div class="panda-body"></div>
+                
+                <!-- Braços -->
+                <div class="panda-arm-left"></div>
+                <div class="panda-arm-right"></div>
+                
+                <!-- Bola de handebol -->
+                <div class="handball">🏐</div>
+            </div>
+            
+            <div class="message" id="message">
+                ✨ Clique no Alice Panda para ganhar muito AMOR! ✨
+            </div>
+            
+            <div class="click-hint">💖 CLIQUE NELE AGORA! 💖</div>
+        </div>
+    </div>
+
+    <script>
+        let clickCount = 0;
+        const panda = document.getElementById('panda');
+        const message = document.getElementById('message');
+        const clickCountEl = document.getElementById('clickCount');
+        const counter = document.getElementById('counter');
+        const explosionContainer = document.createElement('div');
+        explosionContainer.className = 'hearts-explosion';
+        panda.appendChild(explosionContainer);
+
+        // SON 1: Som de clique fofo
+        function playClickSound() {
+            const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAo');
+            audio.volume = 0.3;
+            audio.play().catch(() => {});
+        }
+
+        // SON 2: Som de coração (mais grave)
+        function playHeartSound() {
+            const audio = new Audio('data:audio/wav;base64,UklGRl4CAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAZGF0Ya8CAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAo');
+            audio.volume = 0.4;
+            audio.play().catch(() => {});
+        }
+
+        // Contador de cliques
+        panda.addEventListener('click', function() {
+            clickCount++;
+            clickCountEl.textContent = clickCount;
+            counter.style.transform = 'scale(1.2)';
+            setTimeout(() => counter.style.transform = 'scale(1)', 200);
+            
+            playClickSound();
+            playHeartSound();
+            
+            // Mensagens personalizadas sobre Alice
+            const messages = [
+                `💕 Você fez ${clickCount} cliques! Alice AMA crianças! 🧒❤️`,
+                `🏐 Alice joga HANDEBOL MUITO BEM! Arremesso perfeito! 🎯`,
+                `🐼 Alice Panda te ama demais! Ela adora brincar com crianças! 😍`,
+                `✨ ${clickCount} cliques de amor! Alice é rainha do handebol! 👑🏐`,
+                `💖 Alice ama crianças e é CRAQUE no handebol! Você é incrível! 🌟`,
+                `🧒 Alice Panda: "Eu AMO crianças e jogo handebol como ninguém!" 🏐`,
+                `🎉 ${clickCount} cliques! Alice é a melhor amiga das crianças! ❤️`,
+                `🏐 Alice faz arremessos incríveis! Ela ama todas as crianças! 💕`
+            ];
+            
+            message.textContent = messages[Math.floor(Math.random() * messages.length)];
+            
+            // Explosão MEGA de corações
+            explosionContainer.innerHTML = '';
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-explosion';
+                heart.innerHTML = ['💖', '💕', '💗', '❤️', '💝', '💓'][Math.floor(Math.random() * 6)];
+                heart.style.left = '50%';
+                heart.style.top = '50%';
+                
+                const angle = (i / 20) * Math.PI * 2;
+                const distance = 120 + Math.random() * 80;
+                heart.style.setProperty('--dx', Math.cos(angle) * distance + 'px');
+                heart.style.setProperty('--dy', Math.sin(angle) * distance + 'px');
+                
+                explosionContainer.appendChild(heart);
+                setTimeout(() => heart.remove(), 1200);
+            }
+            
+            // Animação especial do panda
+            panda.style.transform = 'scale(1.25) rotate(-5deg)';
+            setTimeout(() => {
+                panda.style.transform = 'scale(1.08) rotate.

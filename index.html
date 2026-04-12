@@ -3,130 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>💙 Retrospectiva Alanys & João</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>💙 Alanys & João - Nossa Jornada</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="hearts">
-                <i class="fas fa-heart"></i>
-                <i class="fas fa-heart"></i>
-                <i class="fas fa-heart"></i>
-            </div>
-            <h1>💙 Nossa Retrospectiva</h1>
-            <p class="subtitle">Desde 19/08 até 12/11/2024 - O início da nossa história</p>
-            <div class="couple">
-                <span class="name">Alany</span>
-                <span class="amp">&</span>
-                <span class="name">João</span>
-            </div>
-            <div class="period">19 ago 2024 → 12 nov 2024</div>
-        </header>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        <!-- Continuei forte -->
-        <section class="retro-column continued">
-            <div class="column-header">
-                <div class="icon">✅</div>
-                <h2>Continuei Forte</h2>
-                <p>O que funcionou incrível!</p>
-            </div>
-            <div class="notes-container" id="continued">
-                <div class="note pre-filled">
-                    <div>🧤 Alany joga handebol INCRÍVEL como goleirona! Defendendo tudo! 🔥</div>
-                    <small>12/11/2024</small>
-                </div>
-                <div class="note pre-filled">
-                    <div>😍 O sorriso lindo da Alany ilumina meu dia inteiro ✨</div>
-                    <small>12/11/2024</small>
-                </div>
-                <div class="note pre-filled">
-                    <div>💛 O cabelo loiro lindo da Alany é simplesmente perfeito</div>
-                    <small>12/11/2024</small>
-                </div>
-            </div>
-        </section>
+        :root {
+            --bg-primary: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --accent-blue: #3b82f6;
+            --accent-pink: #ec4899;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-xl: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
+        }
 
-        <!-- Tentei, mas... -->
-        <section class="retro-column tried">
-            <div class="column-header">
-                <div class="icon">⚠️</div>
-                <h2>Tentei, mas...</h2>
-                <p>Que podemos melhorar</p>
-            </div>
-            <div class="notes-container" id="tried">
-                <div class="note-placeholder">
-                    <i class="fas fa-plus"></i>
-                    <span>Adicione aqui...</span>
-                </div>
-            </div>
-        </section>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-        <!-- Mudanças -->
-        <section class="retro-column changes">
-            <div class="column-header">
-                <div class="icon">🎯</div>
-                <h2>Mudanças</h2>
-                <p>Vamos fazer diferente</p>
-            </div>
-            <div class="notes-container" id="changes">
-                <div class="note-placeholder">
-                    <i class="fas fa-plus"></i>
-                    <span>Adicione aqui...</span>
-                </div>
-            </div>
-        </section>
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+                radial-gradient(2px 2px at 40px 70px, #fff, transparent),
+                radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+                radial-gradient(1px 1px at 130px 80px, #ddd, transparent);
+            background-repeat: repeat;
+            background-size: 200px 100px;
+            animation: twinkle 20s linear infinite;
+            z-index: -1;
+        }
 
-        <!-- Surpresas -->
-        <section class="retro-column surprises">
-            <div class="column-header">
-                <div class="icon">✨</div>
-                <h2>Surpresas</h2>
-                <p>O que nos surpreendeu</p>
-            </div>
-            <div class="notes-container" id="surprises">
-                <div class="note pre-filled">
-                    <div>👶 Alany cuida de crianças com tanto carinho, ela AMA crianças! ❤️</div>
-                    <small>12/11/2024</small>
-                </div>
-                <div class="note pre-filled">
-                    <div>🌸 O cheiro maravilhoso da Alany me deixa apaixonado toda vez! 😍</div>
-                    <small>12/11/2024</small>
-                </div>
-            </div>
-        </section>
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
 
-        <!-- Modal -->
-        <div class="modal" id="noteModal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 id="modalTitle">Adicionar Reflexão</h3>
-                    <button class="close-modal" id="closeModal"><i class="fas fa-times"></i></button>
-                </div>
-                <textarea id="noteText" placeholder="O que você quer lembrar sobre nós? 💙..."></textarea>
-                <div class="modal-actions">
-                    <button class="btn-secondary" id="cancelNote">Cancelar</button>
-                    <button class="btn-primary" id="saveNote">Salvar <i class="fas fa-heart"></i></button>
-                </div>
-            </div>
-        </div>
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
 
-        <!-- Stats -->
-        <footer class="stats">
-            <div class="stat-item">
-                <span class="stat-number" id="totalNotes">5</span>
-                <span>momentos especiais</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number positive" id="positiveNotes">5</span>
-                <span>coisas incríveis</span>
-            </div>
-        </footer>
-    </div>
+        /* Floating Hearts */
+        .floating-hearts {
+            position: fixed;
+            top: 20%;
+            right: 10%;
+            z-index: 10;
+        }
 
-    <script src="script.js"></script>
-</body>
-</html>
+        .heart-1 { animation: float 6s ease-in-out infinite; }
+        .heart-2 { animation: float 6s ease-in-out infinite 2s; }
+        .heart-3 { animation: float 6s ease-in-out infinite 4s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 60px 40px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .date-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent-blue);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            background: linear-gradient(135deg, #3b82f6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom:
